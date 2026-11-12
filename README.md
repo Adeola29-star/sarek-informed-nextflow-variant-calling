@@ -45,6 +45,7 @@ The extended pipeline contained ten processes and integrated additional quality 
 
 ### Workflow overview
 
+```
 Paired-end FASTQ
       |
       +----> FastQC
