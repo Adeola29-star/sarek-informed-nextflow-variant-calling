@@ -1,6 +1,6 @@
 # Reproducible Germline Variant Calling and Benchmarking with Nextflow
 
-**Bioinformatics Portfolio Project | Nextflow DSL2 · Docker · BWA-MEM · GATK · SAMtools · Mosdepth · MultiQC · hap.py**
+**Nextflow DSL2 · Docker · BWA-MEM · GATK · SAMtools · Mosdepth · MultiQC · hap.py**
 
 ## 1. Problem
 
@@ -19,7 +19,7 @@ The objective was to develop reproducible germline variant-calling workflows, ev
 
 I developed and evaluated two containerised Nextflow DSL2 workflows using paired-end whole-genome sequencing data from NA12878 (HG001).
 
-**Pipeline 1 — Original Nextflow workflow**
+**Pipeline 1 - Original Nextflow workflow**
 
 The original pipeline contained five processes:
 
@@ -29,7 +29,7 @@ The original pipeline contained five processes:
 4. **GATK HaplotypeCaller:** Germline SNP and INDEL calling
 5. **MultiQC:** Consolidated quality-control reporting
 
-**Pipeline 2 — Sarek-informed extended workflow**
+**Pipeline 2 - Sarek-informed extended workflow**
 
 After reviewing [nf-core/sarek](https://nf-co.re/sarek), I extended the original workflow with five additional processes:
 
@@ -232,19 +232,19 @@ The Sarek-informed workflow therefore improved **quality assessment, coverage re
 
 ### 3.5 Overall findings
 
-**Finding 1 — Sequencing coverage strongly influenced variant detection.**
+**Finding 1 - Sequencing coverage strongly influenced variant detection.**
 
 Increasing sequencing depth improved precision, recall and F1 scores for both SNPs and INDELs.
 
-**Finding 2 — Recall remained the primary performance limitation.**
+**Finding 2 - Recall remained the primary performance limitation.**
 
 Even at 2.6×, many known variants were not recovered, demonstrating the limitations of low-coverage germline variant calling.
 
-**Finding 3 — Filtering must provide information beyond existing calling criteria.**
+**Finding 3 - Filtering must provide information beyond existing calling criteria.**
 
 The raw 2.6× VCF contained no variants below QUAL 30, explaining why applying that threshold did not improve benchmark performance.
 
-**Finding 4 — Successful workflow execution does not guarantee reliable biological results.**
+**Finding 4 - Successful workflow execution does not guarantee reliable biological results.**
 
 High read-mapping rates and completed pipeline processes cannot substitute for independent variant-call benchmarking.
 
